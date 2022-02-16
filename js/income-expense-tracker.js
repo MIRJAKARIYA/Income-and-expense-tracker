@@ -16,9 +16,9 @@ function calculateTotalExpenses(){
     const rentCost = getById('rent-field').value;
     const clothesCost = getById('clothes-field').value;
     const income = getById('income-field').value;
-    const returnValue =  validateInput(income,foodCost,rentCost,clothesCost,'expenses');
+    const returnValue =  validateInput(income,foodCost,rentCost,clothesCost,'expenses'); //calling validation for all expenses and income
     if(returnValue != 0){
-        const totalCost = parseFloat(foodCost)+parseFloat(rentCost)+parseFloat(clothesCost);
+        const totalCost = parseFloat(foodCost)+parseFloat(rentCost)+parseFloat(clothesCost); //adding all expenses
         if(totalCost>income){
             alert('Total Expenses cannot be greater than Income');
             return;
@@ -34,7 +34,7 @@ function calculateSaving(){
     const savingPercentage = getById('percent-save').value;
     const income = getById('income-field').value;
     const balance = getById('balance').innerText;
-    const returnValue = validateInput(savingPercentage);
+    const returnValue = validateInput(savingPercentage); //calling validation function
     if(returnValue!= 0){
         const savingAmount = parseFloat(income)*(parseFloat(savingPercentage)/100);
         if(savingAmount>balance){
@@ -48,7 +48,7 @@ function calculateSaving(){
 }
 //function for input validation
 function validateInput(){
-    if(arguments[arguments.length-1] == 'expenses'){
+    if(arguments[arguments.length-1] == 'expenses'){ //validation for expenses calculation
         if(arguments[0] == '' || arguments[1] == '' || arguments[2] == '' || arguments[3] == ''){
             alert('all input fields must have a value');
             return 0;
@@ -94,7 +94,7 @@ function validateInput(){
             }
         }
     }
-    else{
+    else{ //validation for percentage saving
         if(arguments[0] == ''){
             alert('percentage field must have a value');
             return 0;
