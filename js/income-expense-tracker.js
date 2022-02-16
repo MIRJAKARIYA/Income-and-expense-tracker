@@ -22,9 +22,19 @@ function calculateTotalExpenses(){
 }
 function calculateSaving(){
     const savingPercentage = getById('percent-save').value;
+    const income = getById('income-field').value;
+    const balance = getById('balance').innerText;
+
     const returnValue = validateInput(savingPercentage);
     if(returnValue!= 0){
-        
+        const savingAmount = income*(savingPercentage/100);
+        if(savingAmount>balance){
+            alert('you dont have enough money to save.');
+        }
+        else{
+            getById('save-amount').innerText = savingAmount;
+            getById('remaining-balance').innerText = balance-savingAmount;
+        }
     }
 }
 function validateInput(){
