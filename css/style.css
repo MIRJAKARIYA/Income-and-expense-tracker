@@ -3,8 +3,9 @@
     font-size: 60px;
     color: rgba(0, 0, 255, 0.623);
 }
+
 /* input fields styling */
-.input-field-height{
+.input-field-styling{
     height: 50px;
     width: 50%;
     background-color: rgba(128, 128, 128, 0.274);
