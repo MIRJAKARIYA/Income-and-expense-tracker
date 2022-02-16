@@ -13,7 +13,7 @@
 <body>
     <main>
         <section class="container mb-5">
-            <h1 class="text-center main-heading my-5">Income and expense tracker</h1>
+            <h1 class="text-center main-heading mt-4 mb-5">Income and expense tracker</h1>
             <div class="row gy-4">
                 <!-- image part starts here -->
                 <div class="col-md-6">
@@ -26,27 +26,27 @@
                         <!-- income part starts here -->
                    <div class="main-content-background h-100">
                     <div>
-                        <h2 class="text-center">Income</h2>
+                        <h2 class="text-center text-primary pt-5">Income</h2>
                         <div class="text-center my-3">
                             <label for="income-field" class="me-2 fs-4">Income:</label>
-                            <input type="text" id="income-field" class="input-field-styling" value="0" style="margin-right: 1.8rem;">
+                            <input type="text" id="income-field" class="input-field-styling fs-4 ps-2" value="0" style="margin-right: 1.8rem;">
                         </div>
                     </div>
                     <!-- expenses part starts here -->
                     <div>
-                        <h2 class="text-center">Expenses</h2>
+                        <h2 class="text-center text-danger">Expenses</h2>
                         <div>
                             <div class="text-center my-3">
                                 <label for="food-field" class="me-2 fs-4">Food:</label>
-                                <input type="text" id="food-field" value="0" class="input-field-styling me-1">
+                                <input type="text" id="food-field" value="0" class="input-field-styling me-1 fs-4 ps-2">
                             </div>
                             <div class="text-center my-3">
                                 <label for="rent-field" class="me-2 fs-4">Rent:</label>
-                                <input type="text" id="rent-field" value="0" class="input-field-styling ">
+                                <input type="text" id="rent-field" value="0" class="input-field-styling  fs-4 ps-2">
                             </div>
                             <div class="text-center my-3">
                                 <label for="clothes-field" class="me-2 fs-4">Clothes:</label>
-                                <input type="text" id="clothes-field" value="0" class="input-field-styling" style="margin-right: 2rem;">
+                                <input type="text" id="clothes-field" value="0" class="input-field-styling fs-4 ps-2" style="margin-right: 2rem;">
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <!-- total expenses and balance part starts here -->
                 <div class="mt-4">
                     <div class="text-center">
-                        <h2>Total Expenses: <span id="total-expenses">0</span></h2>
+                        <h2 class="text-danger">Total Expenses: <span id="total-expenses">0</span></h2>
                     </div>
                     <div class="text-center mt-4">
                         <h2>Balance: <span id="balance">0</span></h2>

@@ -2,6 +2,15 @@
 function getById(id){
     return document.getElementById(id);
 }
+function nanConfirmed(name,id){
+    alert(`${name} can only be numbers`);
+    getById(`${id}`).value = '';
+}
+function negativeConfirmed(name,id){
+    alert(`${name} cannot be negative`);
+    getById(`${id}`).value = '';
+}
+//function for calculating total expense
 function calculateTotalExpenses(){
     const foodCost = getById('food-field').value;
     const rentCost = getById('rent-field').value;
@@ -16,27 +25,28 @@ function calculateTotalExpenses(){
         }
         else if(isNaN(totalCost) == false){
             getById('total-expenses').innerText = totalCost;
-            getById('balance').innerText = income-totalCost;
+            getById('balance').innerText = parseFloat(income)-totalCost;
         }
     }
 }
+//function for calculation percentage saving
 function calculateSaving(){
     const savingPercentage = getById('percent-save').value;
     const income = getById('income-field').value;
     const balance = getById('balance').innerText;
-
     const returnValue = validateInput(savingPercentage);
     if(returnValue!= 0){
-        const savingAmount = income*(savingPercentage/100);
+        const savingAmount = parseFloat(income)*(parseFloat(savingPercentage)/100);
         if(savingAmount>balance){
             alert('you dont have enough money to save.');
         }
-        else{
+        else if(isNaN(savingAmount) == false){
             getById('save-amount').innerText = savingAmount;
-            getById('remaining-balance').innerText = balance-savingAmount;
+            getById('remaining-balance').innerText = parseFloat(balance)-savingAmount;
         }
     }
 }
+//function for input validation
 function validateInput(){
     if(arguments[arguments.length-1] == 'expenses'){
         if(arguments[0] == '' || arguments[1] == '' || arguments[2] == '' || arguments[3] == ''){
@@ -101,14 +111,6 @@ function validateInput(){
         }
     }
 }
-function nanConfirmed(name,id){
-    alert(`${name} can only be numbers`);
-    getById(`${id}`).value = '';
-}
-function negativeConfirmed(name,id){
-    alert(`${name} cannot be negative`);
-    getById(`${id}`).value = '';
-}
 //calculate button event listener
 getById('calculate-button').addEventListener('click',function(){
     calculateTotalExpenses();
@@ -116,4 +118,4 @@ getById('calculate-button').addEventListener('click',function(){
 //save button event listener
 getById('save-button').addEventListener('click',function(){
     calculateSaving();
-})
+});
