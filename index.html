@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money master</title>
+    <title>Income and expense tracker</title>
     <!-- bootstrap css cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- custom css link -->
@@ -14,70 +14,74 @@
     <main>
         <section class="container mb-5">
             <h1 class="text-center main-heading my-5">Income and expense tracker</h1>
-            <div class="row g-5">
+            <div class="row gy-4">
                 <!-- image part starts here -->
                 <div class="col-md-6">
                     <div class="background-setting h-100">
-                        <img src="images/3006975.jpg" class="img-fluid h-100" alt="">
+                        <img src="images/3006975.jpg" class="mw-100 h-100" alt="">
                     </div>
                 </div>
                 <!-- main content part starts here -->
-                <div class="col-md-6 bg-warning">
+                <div class="col-md-6">
+                        <!-- income part starts here -->
+                   <div class="main-content-background h-100">
                     <div>
+                        <h2 class="text-center">Income</h2>
+                        <div class="text-center my-3">
+                            <label for="income-field" class="me-2 fs-4">Income:</label>
+                            <input type="text" id="income-field" class="input-field-styling" style="margin-right: 1.8rem;">
+                        </div>
+                    </div>
+                    <!-- expenses part starts here -->
+                    <div>
+                        <h2 class="text-center">Expenses</h2>
                         <div>
-                            <h2 class="text-center">Income</h2>
                             <div class="text-center my-3">
-                                <label for="" class="me-2">Income:</label>
-                                <input type="text" id="" class="input-field-styling" style="margin-right: 1.4rem;">
+                                <label for="food-field" class="me-2 fs-4">Food:</label>
+                                <input type="text" id="food-field" class="input-field-styling me-1">
                             </div>
-                        </div>
-                        <div>
-                            <h2 class="text-center">Expenses</h2>
-                            <div>
-                                <div class="text-center my-3">
-                                    <label for="" class="me-2">Food:</label>
-                                    <input type="text" id="" class="input-field-styling me-1">
-                                </div>
-                                <div class="text-center my-3">
-                                    <label for="" class="me-2">Rent:</label>
-                                    <input type="text" id="" class="input-field-styling ">
-                                </div>
-                                <div class="text-center my-3">
-                                    <label for="" class="me-2">Clothes:</label>
-                                    <input type="text" id="" class="input-field-styling me-4">
-                                </div>
+                            <div class="text-center my-3">
+                                <label for="rent-field" class="me-2 fs-4">Rent:</label>
+                                <input type="text" id="rent-field" class="input-field-styling ">
+                            </div>
+                            <div class="text-center my-3">
+                                <label for="clothes-field" class="me-2 fs-4">Clothes:</label>
+                                <input type="text" id="clothes-field" class="input-field-styling" style="margin-right: 2rem;">
                             </div>
                         </div>
                     </div>
-                    <button class="mx-auto mt-3 btn btn-primary d-block px-5 py-2 fs-4">Calculate</button>
-                    <div class="mt-4">
-                        <div class="text-center">
-                            <h2>Total Expenses: <span>5500</span></h2>
-                        </div>
-                        <div class="text-center mt-4">
-                            <h2>Balance: <span>4500</span></h2>
-                        </div>
+                <!-- calculate button -->
+                <button class="mx-auto mt-3 btn btn-primary d-block px-5 py-2 fs-4" id="calculate-button">Calculate</button>
+                <!-- total expenses and balance part starts here -->
+                <div class="mt-4">
+                    <div class="text-center">
+                        <h2>Total Expenses: <span id="total-expenses">5500</span></h2>
                     </div>
-                    <div class="text-center d-flex justify-content-center align-items-center mt-4 flex-wrap">
-                        <span class="fs-3">Save:</span>
-                        <input type="text" class="ms-2 input-field-styling text-center fs-3" name="" id="" style="width: 150px;">
-                        <span class="fs-3 mx-2">%</span>
-                        <button class="btn btn-primary px-5 py-2 fs-4">Save</button>
+                    <div class="text-center mt-4">
+                        <h2>Balance: <span id="balance">4500</span></h2>
                     </div>
-                    <div class="my-4 ">
-                        <div class="text-center">
-                            <h2>Saving Amount: <span>2000</span></h2>
-                        </div>
-                        <div class="text-center mt-4">
-                            <h2>Remaining Balance: <span>2500</span></h2>
-                        </div>
+                </div>
+                <!-- percentage based calculation of saving starts here -->
+                <div class="text-center d-flex justify-content-center align-items-center mt-4 flex-wrap">
+                    <label for="percent-save" class="fs-3">Save:</label>
+                    <input type="text" class="ms-2 input-field-styling text-center fs-3" name="" id="percent-save" style="width: 150px;">
+                    <span class="fs-3 mx-2">%</span>
+                    <button class="btn btn-primary px-5 py-2 fs-4" id="save-button">Save</button>
+                </div>
+                <!-- showing saving amount and remaining balance part starts here -->
+                <div class="my-4 ">
+                    <div class="text-center">
+                        <h2>Saving Amount: <span>2000</span></h2>
                     </div>
+                    <div class="text-center mt-4">
+                        <h2>Remaining Balance: <span>2500</span></h2>
+                    </div>
+                </div>
+                   </div>
                 </div>
             </div>
         </section>
     </main>
-
-
     <!-- bootstrap js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- custom js link -->
