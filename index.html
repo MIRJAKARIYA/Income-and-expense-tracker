@@ -12,18 +12,18 @@
 </head>
 <body>
     <main>
-        <section class="border container">
-            <h1 class="border text-center">Income and expense tracker</h1>
+        <section class="container">
+            <h1 class="text-center">Income and expense tracker</h1>
             <div class="row g-5">
                 <!-- image part starts here -->
-                <div class="col-6">
-                    <div class="border">
+                <div class="col-6 bg-danger">
+                    <div>
                         <img src="images/3006975.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
                 <!-- main content part starts here -->
-                <div class="col-6">
-                    <div class="border">
+                <div class="col-6 bg-warning">
+                    <div>
                         <div>
                             <h2 class="text-center">Income</h2>
                             <div class="text-center my-3">
@@ -33,7 +33,7 @@
                         </div>
                         <div>
                             <h2 class="text-center">Expenses</h2>
-                            <div class="border">
+                            <div>
                                 <div class="text-center my-3">
                                     <label for="" class="me-2">Food:</label>
                                     <input type="text" id="" class="input-field-height me-1">
@@ -47,6 +47,29 @@
                                     <input type="text" id="" class="input-field-height me-4">
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <button class="mx-auto mt-3 btn btn-primary d-block px-5 py-2 fs-4">Calculate</button>
+                    <div class="mt-4">
+                        <div class="text-center">
+                            <h2>Total Expenses: <span>5500</span></h2>
+                        </div>
+                        <div class="text-center mt-4">
+                            <h2>Balance: <span>4500</span></h2>
+                        </div>
+                    </div>
+                    <div class="text-center d-flex justify-content-center align-items-center">
+                        <span class="fs-2">Save:</span>
+                        <input type="text" class="ms-2 input-field-height" name="" id="" style="width: 150px;">
+                        <span class="fs-2 mx-2">%</span>
+                        <button class="btn btn-primary px-5 py-2 fs-4">Save</button>
+                    </div>
+                    <div class="mt-4">
+                        <div class="text-center">
+                            <h2>Saving Amount: <span>2000</span></h2>
+                        </div>
+                        <div class="text-center mt-4">
+                            <h2>Remaining Balance: <span>2500</span></h2>
                         </div>
                     </div>
                 </div>
