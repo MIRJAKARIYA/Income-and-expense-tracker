@@ -21,7 +21,11 @@ function calculateTotalExpenses(){
     }
 }
 function calculateSaving(){
-    
+    const savingPercentage = getById('percent-save').value;
+    const returnValue = validateInput(savingPercentage);
+    if(returnValue!= 0){
+        
+    }
 }
 function validateInput(){
     if(arguments[arguments.length-1] == 'expenses'){
@@ -35,7 +39,7 @@ function validateInput(){
                 return 0;
             }
         }
-        if(isNaN(arguments[1]) || arguments[1]<0){
+        else if(isNaN(arguments[1]) || arguments[1]<0){
             if(isNaN(arguments[1])){
                 nanConfirmed('Food cost','food-field');
                 return 0;
@@ -45,7 +49,7 @@ function validateInput(){
                 return 0;
             }
         }
-        if(isNaN(arguments[2]) || arguments[2]<0){
+        else if(isNaN(arguments[2]) || arguments[2]<0){
             if(isNaN(arguments[2])){
                 nanConfirmed('Rent','rent-field');
                 return 0;
@@ -55,8 +59,8 @@ function validateInput(){
                 return 0;
             }
         }
-        if(isNaN(arguments[3]) || arguments[3]<0){
-            if(isNaN(arguments[0])){
+        else if(isNaN(arguments[3]) || arguments[3]<0){
+            if(isNaN(arguments[3])){
                 nanConfirmed('Clothes cost','clothes-field');
                 return 0;
             }
@@ -67,7 +71,16 @@ function validateInput(){
         }
     }
     else{
-
+        if(isNaN(arguments[0]) || arguments[0]<0){
+            if(isNaN(arguments[0])){
+                nanConfirmed('Percentage','percent-save');
+                return 0;
+            }
+            else{
+                negativeConfirmed('Percentage','percent-save');
+                return 0;
+            }
+        }
     }
 }
 function nanConfirmed(name,id){
