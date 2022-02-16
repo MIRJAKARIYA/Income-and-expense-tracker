@@ -9,7 +9,7 @@ function calculateTotalExpenses(){
     const income = getById('income-field').value;
     const returnValue =  validateInput(income,foodCost,rentCost,clothesCost,'expenses');
     if(returnValue != 0){
-        const totalCost = parseInt(foodCost)+parseInt(rentCost)+parseInt(clothesCost);
+        const totalCost = parseFloat(foodCost)+parseFloat(rentCost)+parseFloat(clothesCost);
         if(totalCost>income){
             alert('Total Expenses cannot be greater than Income');
             return;
@@ -39,7 +39,11 @@ function calculateSaving(){
 }
 function validateInput(){
     if(arguments[arguments.length-1] == 'expenses'){
-        if(isNaN(arguments[0]) || arguments[0]<0){
+        if(arguments[0] == '' || arguments[1] == '' || arguments[2] == '' || arguments[3] == ''){
+            alert('all input fields must have a value');
+            return 0;
+        }
+        else if(isNaN(arguments[0]) || arguments[0]<0){
             if(isNaN(arguments[0])){
                 nanConfirmed('Income','income-field');
                 return 0;
@@ -81,7 +85,11 @@ function validateInput(){
         }
     }
     else{
-        if(isNaN(arguments[0]) || arguments[0]<0){
+        if(arguments[0] == ''){
+            alert('percentage field must have a value');
+            return 0;
+        }
+        else if(isNaN(arguments[0]) || arguments[0]<0){
             if(isNaN(arguments[0])){
                 nanConfirmed('Percentage','percent-save');
                 return 0;
