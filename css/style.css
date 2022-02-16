@@ -1,0 +1,8 @@
+/* input fields styling */
+.input-field-height{
+    height: 50px;
+    width: 50%;
+    background-color: rgba(128, 128, 128, 0.274);
+    border: none;
+    border-radius: 5px;
+}
